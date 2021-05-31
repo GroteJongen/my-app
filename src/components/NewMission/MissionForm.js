@@ -4,7 +4,7 @@ import {useState} from "react";
 function MissionForm(props) {
 
     const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredScore, setEnteredScore] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
     const [enteredAirKills, setEnteredAirKills] = useState('');
     const [enteredGroundKills, setEnteredGroundKills] = useState('');
@@ -15,7 +15,7 @@ function MissionForm(props) {
     };
 
     const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value)
+        setEnteredScore(event.target.value)
     }
 
     const dateChangeHandler = (event) => {
@@ -41,7 +41,7 @@ function MissionForm(props) {
             groundKills: enteredGroundKills,
             deaths: enteredDeaths,
             title: enteredTitle,
-            amount: enteredAmount,
+            score: enteredScore,
             date: new Date(enteredDate)
         };
         props.onSaveMissionData(expenseData);
@@ -52,7 +52,7 @@ function MissionForm(props) {
     function clearData() {
         setEnteredDate('');
         setEnteredTitle('');
-        setEnteredAmount('');
+        setEnteredScore('');
         setEnteredDeaths('')
         setEnteredGroundKills('')
         setEnteredAirKills('')
@@ -92,12 +92,12 @@ function MissionForm(props) {
                     </div>
                 </div>
                 <div className='new-mission_control'>
-                    <label>Amount</label>
+                    <label>Score</label>
                     <input type='number'
                            min="0.01"
                            step="0.01"
                            onChange={amountChangeHandler}
-                           value={enteredAmount}/>
+                           value={enteredScore}/>
                 </div>
                 <div className='new-mission_control'>
                     <label>Date</label>

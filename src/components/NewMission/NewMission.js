@@ -6,11 +6,11 @@ import {useState} from "react";
 function NewMission(prop) {
     const [isEditing, setIsEditing] = useState(false);
     const saveMissionDataHandler = (enteredMissionData) => {
-        const expenseData = {
+        const missionsData = {
             ...enteredMissionData,
             id: Math.random().toString()
         };
-        prop.onAddMision(expenseData);
+        prop.onAddMision(missionsData);
         setIsEditing(false);
     }
 

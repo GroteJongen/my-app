@@ -6,15 +6,15 @@ const MissionsList = props => {
        return <h2 className='missions-list__fallback'>Found no missions.</h2>
     }
     return <ul className='missions-list'>
-        {props.items.map((expense) => (
+        {props.items.map((mission) => (
         <MissionItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-            airKills={expense.airKills}
-            groundKills={expense.groundKills}
-            deaths={expense.deaths}
+            key={mission.id}
+            title={mission.title}
+            amount={mission.score}
+            date={mission.date}
+            airKills={mission.airKills}
+            groundKills={mission.groundKills}
+            deaths={mission.deaths}
         />))};
     </ul>
 }

@@ -12,7 +12,7 @@ function MissionItem(props) {
                 <h2>Air kills: {props.airKills}</h2>
                 <h2 className>Ground kills: {props.groundKills}</h2>
                 <h2 className>Deaths: {props.deaths}</h2>
-                <div className="mission-item__score">Score: {props.amount}</div>
+                <div className="mission-item__score">Score: {props.score}</div>
             </div>
         </div>);
 }
