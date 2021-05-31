@@ -1,0 +1,9 @@
+.missions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.missions-list__fallback {
+    color: white;
+    text-align: center;
+}
