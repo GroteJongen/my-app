@@ -19,7 +19,9 @@ function Missions(missions) {
         return mission.date.getFullYear().toString() === filteredYear;
     })
 
-
+    const onDeleteHandler = title => {
+       missions.onDeleteMission(title)
+    }
 
     const onTotalHandler = () => {
         setIsCheckingTotal(true);
@@ -36,7 +38,7 @@ function Missions(missions) {
             <MissionsChart missions={filteredMissions}/>
             {isCheckingTotal === true ?
                 <TotalResults missions={filteredMissions} onStopCheckingTotal={onListHandler}/> :
-                <MissionsList items={filteredMissions}/>}
+                <MissionsList items={filteredMissions} onDelete={onDeleteHandler}/>}
         </Card>
     );
 
