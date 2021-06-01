@@ -2,9 +2,17 @@ import MissionItem from "./MissionItem";
 import './MissionsList.css'
 
 const MissionsList = props => {
+
+    
+    const onDelete = (mission) => {
+       props.onDelete(mission)
+    }
+    
     if(props.items.length === 0 ) {
        return <h2 className='missions-list__fallback'>Found no missions.</h2>
     }
+
+
     return <ul className='missions-list'>
         {props.items.map((mission) => (
         <MissionItem
@@ -15,6 +23,7 @@ const MissionsList = props => {
             airKills={mission.airKills}
             groundKills={mission.groundKills}
             deaths={mission.deaths}
+            onDeleteHandler={onDelete}
         />))};
     </ul>
 }

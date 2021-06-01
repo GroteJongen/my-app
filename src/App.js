@@ -47,10 +47,16 @@ function App() {
         });
     };
 
+    const deleteMissionHandler = title => {
+        console.log(title.title)
+        setMissions(prevMissions => prevMissions.filter(mission => !(mission.title === title.title)));
+        console.log(missions)
+    }
+
     return (
         <Card>
             <NewMission onAddMision={addMissionHandler}/>
-         <Missions items={missions}/>
+         <Missions items={missions} onDeleteMission={deleteMissionHandler}/>
         </Card>
     );
 }
