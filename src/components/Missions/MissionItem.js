@@ -11,7 +11,6 @@ function MissionItem(props) {
     const onDeleteHandler = () => {
         setTitleToDelete(props)
         props.onDeleteHandler(props)
-        console.log(props)
     }
 
     return (
